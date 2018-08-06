@@ -3,11 +3,13 @@ package com.example.qq.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.qq.AccountData;
@@ -26,7 +28,7 @@ public class Login extends AppCompatActivity {
     Button btnLogin;
     Button btnReset;
     Button btnRegister;
-
+    Button btnTermOfService;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class Login extends AppCompatActivity {
 */
         accountId = (EditText)findViewById(R.id.account_id);
         accountPassword = (EditText)findViewById(R.id.account_password);
+
 
         btnLogin = (Button)findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +88,15 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Login.this , Register.class);
+                startActivity(intent);
+            }
+        });
+
+        btnTermOfService = (Button)findViewById(R.id.btn_termOfService);
+        btnTermOfService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Login.this , TermOfService.class);
                 startActivity(intent);
             }
         });
